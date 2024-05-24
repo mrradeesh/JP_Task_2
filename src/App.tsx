@@ -6,6 +6,7 @@ import "./App.css";
 /**
  * State declaration for <App />
  */
+//declaring showGraph for display the graph and hide the graph
 interface IState {
   data: ServerRespond[];
   showGraph: boolean;
@@ -18,7 +19,7 @@ interface IState {
 class App extends Component<{}, IState> {
   constructor(props: {}) {
     super(props);
-
+    //initially graph should be hidden so after user clicking the button only it show so here we initializing as false
     this.state = {
       // data saves the server responds.
       // We use this state to parse data down to the child element (Graph) as element property
@@ -31,6 +32,7 @@ class App extends Component<{}, IState> {
    * Render Graph react component with state.data parse as property data
    */
   renderGraph() {
+    //if we button clicks showgraph will be true and it shows the graph
     if (this.state.showGraph) {
       return <Graph data={this.state.data} />;
     }
@@ -39,6 +41,7 @@ class App extends Component<{}, IState> {
   /**
    * Get new data from server and update the state with the new data
    */
+  //we are reading the data cantinuesly once user clicked the button use set interval methos
   getDataFromServer() {
     let x = 0;
     const interval = setInterval(() => {

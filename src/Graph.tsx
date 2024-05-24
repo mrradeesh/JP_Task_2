@@ -29,7 +29,7 @@ class Graph extends Component<IProps, {}> {
   render() {
     return React.createElement("perspective-viewer");
   }
-
+  //here we are setting the attribute for graph
   componentDidMount() {
     // Get element to attach the table from the DOM.
     const elem = (document.getElementsByTagName(
